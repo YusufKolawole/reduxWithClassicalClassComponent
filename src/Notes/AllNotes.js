@@ -7,7 +7,7 @@ class AllNotes extends React.Component {
     const notesItems = this.props.notes.map((note, index) => (
       <li key={index}>
         <b>{note.title}</b>
-        <button onClick={() => this.removeNote(index)}>x</button>
+        <button onClick={() => this.props.removeNote(index)}>x</button>
         <br />
         <span>{note.content}</span>
       </li>
@@ -31,4 +31,4 @@ const mapDispatchToProps = {
   removeNote: removeNote,
 };
 
-export default connect(mapStateToProps, mapStateToProps)(AllNotes);
+export default connect(mapStateToProps, mapDispatchToProps)(AllNotes);
